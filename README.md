@@ -59,9 +59,7 @@ The script is highly configurable through the following constants:
 ```javascript
 const FAST_MODE = false;
 const MY_DOMAIN = "somedomain.ru";
-const SLUG_TO_PAGE = {
-    "": "dc49b6c1-1234-4b62-8745-491354878412", // Root page
-};
+const MAIN_PAGE = "dc49b6c1-1234-4b62-8745-491354878412"; // Root page
 const PAGE_TITLE = "Your page title here";
 const PAGE_DESCRIPTION = "Your page description here";
 const GOOGLE_FONT = "Rubik";
