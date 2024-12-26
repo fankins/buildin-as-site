@@ -10,7 +10,7 @@ const LOGOTYPE = "https://example.com/custom-logo.png";
 // Dictionary for phrase replacements
 const PHRASE_REPLACEMENTS = {
     "jjy.fyaadd.cn/api/": MY_DOMAIN, // Replace junk domain with custom domain
-    "async function _initializeAnalytics\\(et\,tt\,nt\,it\,ot\,st\,ut\\)": "async function _initializeAnalytics(et,tt,nt,it,ot,st,ut){} async function _initializeAnalyticsKek()", //вырезаем подключение стандартной аналитики
+    "async function _initializeAnalytics\\(et\,tt\,nt\,it\,ot\,st\,ut\\)": "async function _initializeAnalytics(et,tt,nt,it,ot,st,ut){} async function _initializeAnalyticsKek()", // Disable default analytics
      // Add other replacements as needed
 };
 
