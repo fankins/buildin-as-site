@@ -7,11 +7,11 @@ const PAGE_DESCRIPTION = "Your page description here";
 const GOOGLE_FONT = "Rubik";
 const LOGOTYPE = "https://example.com/custom-logo.png";
 
-// Словарь для замены фраз
+// Dictionary for phrase replacements
 const PHRASE_REPLACEMENTS = {
-    "jjy.fyaadd.cn/api/": MY_DOMAIN, //какой то мусорный домен
+    "jjy.fyaadd.cn/api/": MY_DOMAIN, // Replace junk domain with custom domain
     "async function _initializeAnalytics\\(et\,tt\,nt\,it\,ot\,st\,ut\\)": "async function _initializeAnalytics(et,tt,nt,it,ot,st,ut){} async function _initializeAnalyticsKek()", //вырезаем подключение стандартной аналитики
-    // Добавьте другие фразы по необходимости
+     // Add other replacements as needed
 };
 
 /* EVENT LISTENER */
@@ -23,9 +23,9 @@ addEventListener("fetch", (event) => {
 async function handleRequest(request) {
     const url = new URL(request.url);
 
-    if (url.pathname == '/') { //редирект на корневую страницу
+    if (url.pathname == '/') {
         return Response.redirect("https://" + MY_DOMAIN + "/share/" + MAIN_PAGE, 301);
-    } else if (url.pathname == '/api/users/me') { //какой то скрипт который возвращает мусор
+    } else if (url.pathname == '/api/users/me') { //junk request
         return new Response(null, {
             status: 204,
             statusText: 'No Content',
@@ -82,7 +82,6 @@ async function modifyJavaScriptResponse(response) {
 }
 
 /* REWRITERS */
-//подменяет оригинальные ссылки скриптов на проксируемые, для дальнейшей возможности модифицировать их
 class ScriptRewriter { 
     element(element) {
         if (FAST_MODE === false){
